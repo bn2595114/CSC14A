@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<title> Bubble Factory </title>
+
+<script>
+
+var scores = [60, 50, 60, 58, 54, 54,     
+              58, 50, 52, 54, 48, 69,
+              34, 55, 51, 52, 44, 51,
+              69, 64, 66, 55, 52, 61,
+              46, 31, 57, 52, 44, 18,
+              41, 53, 55, 61, 51, 44];
+			  
+var hiScore = 0;
+for(var i=0; i<scores.length; i++){
+	console.log("Score "+(i+1)+": "+scores[i]);
+	if(hiScore < scores[i])
+		hiScore = scores[i];
+}
+console.log("Highest Bubble Score: "+hiScore);
+
+var bestSol=[];
+for(var i=0; i<scores.length; i++){
+	if(hiScore == scores[i])
+		bestSol.push(i);
+}
+console.log("Number of Best Results: "+bestSol);
+			  
+</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

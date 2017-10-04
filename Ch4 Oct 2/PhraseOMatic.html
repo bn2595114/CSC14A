@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<title> Phrase-O-Matic </title>
+
+<script>
+
+var adj = ["Easy", "Hard", "Crazy", "Funny", "Good", "Bad", "Boring", "Smelly", "Short", "Ugly"];
+var noun = ["Cup", "Bowl", "Spaghetti", "Chocolate", "Toilet", "Sink", "Computer", "Book", "Game", "Dog"];
+var plural = ["Pets", "Documents", "People", "Shoes", "Classes", "Signs", "Fingers", "Toes", "Ears", "Instruments"];
+var adverb = ["Gently", "Softly", "Powerfully", "Quietly", "Brilliantly", "Quickly", "Eternally", "Weirdly", "Firmly", "Lightly"];
+var verb = ["Dance", "Fart", "Sniff", "Cry", "Die", "Read", "Play", "Type", "Breathe", "Punch"];
+
+function getRand(word){
+	var rand = Math.floor(Math.random()*word.length);
+	return word[rand];
+}
+
+alert(getRand(adj)+ " teachers always give out "+getRand(adj)+ " assignments.\n" +
+	  "But as everyone knows, if you want to pass all your classes so you can go\n" +
+	  "to a/an "+getRand(noun)+" and become president of a big international\n" +
+	  getRand(noun)+" and have millions of "+getRand(plural)+" in the\n" +
+	  "bank, you must do your homework and study "+getRand(adverb)+". If you\n" +
+	  "just sit around and "+getRand(verb)+", you won't get ahead in life. You\n" +
+	  "must learn to pay attention to every "+getRand(adj)+" thing your teacher\n" +
+	  "says. Do not interrupt or whisper to other "+getRand(plural)+" during class.\n" +
+	  "Be sure to have a nice, "+getRand(adj)+" notebook in which you can\n"+
+	  "write down anything the teacher says that seems "+getRand(adj)+". Then\n"+
+	  "go home and memorize all of those "+getRand(adj)+" notes. When your\n"+
+	  "teacher gives a surprise quiz, you wil know all of the "+getRand(plural)+".");
+
+
+</script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>
