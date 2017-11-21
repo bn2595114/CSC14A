@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<title> Flying First Class </title>
+
+<script>
+
+//need an array of 4 or more passengers with name, paid status: true or false, and ticket type (firstclass, premium, and coach)
+var passengers = [  { name: "Jane", paid: true, ticket: "coach" },
+					{ name: "Evel", paid: true, ticket: "firstclass" },
+					{ name: "Sue", paid: true, ticket: "firstclass" },
+					{ name: "John", paid: true, ticket: "premium" }];
+//need a function to process the passengers. Iterate over the length of the array and call the function on each passenger. If the passenger fails the test, they can't fly. (either they haven't paid or they are on the no fly list)
+function processPassengers(passengers, test) {
+	for(var i=0; i<passengers.length; i++){
+		if(test(passengers[i]))
+			return false;
+	}
+	return true;
+}
+
+
+//Put Dr. Evel on the No Fly List because he is Evil! Spelling and case must match the name that you put in the array. If you want to put me on the no fly list instead of Dr. Evel, go for it....
+
+
+function checkNoFlyList(passenger) {
+	return(passenger.name === "Evel");
+}
+
+//Check to see who hasn't paid... it will get that from the array.
+
+function checkNotPaid(passenger) {
+		return(!passenger.paid);
+}
+
+//This will print out who has and has not paid using string concatenation into a var called message. If the passenger has paid then the message will read message + " has paid"
+
+function printPassenger(passenger) {
+	var message = passenger.name;
+	if(passenger.paid === true)
+		message += " has paid";
+	else
+		message += " has not paid";
+	console.log(message);
+	return false;
+ }
+
+//
+// plane can only fly if every passenger is on the fly flist
+//
+var allCanFly = processPassengers(passengers, checkNoFlyList);
+if (!allCanFly) {
+		console.log("One or more passengers are on the no fly list.");
+}
+
+//
+// plane can only fly if every passenger has paid
+//
+var allPaid = processPassengers(passengers, checkNotPaid);
+if (!allPaid) {
+	console.log("One ore more passengers have not paid");
+}
+
+// 
+// we don't care about the result here; we're just using 
+// processPassengers to display the passenger list
+//
+processPassengers(passengers, printPassenger);
+
+//first class gets a cocktail or wine, premium gets wine, cola, or water, and coach gets cola or water.
+function createDrinkOrder(passenger) {
+
+	if(passenger.ticket === "firstclass")
+			alert("Would you like cocktail or wine?");
+		
+    else if(passenger.ticket === "premium")
+			alert("Your choice is wine, cola or water");	
+			
+	  else
+			alert("Your choice is water or cola");
+}
+
+//first class gets chicken or pasta, premium gets a snack box or cheese plate, and coach gets peanuts or pretzels.
+function createDinnerOrder(passenger) {
+	
+	if(passenger.ticket === "firstclass")
+			alert("Would you like chicken or pasta?");
+	
+	else if(passenger.ticket === "premium")
+			alert("Would you like a snack box or cheese plate?");
+	
+	else
+			alert("Would you like peanuts or pretzels?");
+}
+
+//alert window to pick up the trash
+function pickupTrash() {
+	alert("The trash has been picked up");
+}
+
+//serve customer will serve drinks, get dinner order, and pick up trash.
+function serveCustomer(passenger) {
+	createDrinkOrder(passenger);
+	createDinnerOrder(passenger);
+	pickupTrash();
+}
+
+//this will iterate over the customers, serving them one by one.
+function servePassengers(passengers) {
+	for(var i=0; i<passengers.length; i++)
+		serveCustomer(passengers[i]);
+}
+
+servePassengers(passengers); 
+//of course we need to call servePassengers ( ) with passengers as a parameter below. I didn't include it, you have to write it.
+
+</script>
+
+</head>
+
+<body></body>
+
+</html>

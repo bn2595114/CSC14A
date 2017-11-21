@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<title> Array Sort </title>
+
+<script>
+
+var numbersArray = [];
+for(var i=0; i<20; i++)
+	numbersArray.push(Math.floor(Math.random()*100));
+console.log("Unsorted array: " + numbersArray);
+
+function compareNumbers(num1, num2) {
+	if (num1 > num2) {
+		return 1;
+	} 
+	else if (num1 === num2) {
+		return 0;
+	}
+	else {
+		return -1;
+	}
+}
+
+
+numbersArray.sort(compareNumbers);
+console.log("Sorted Array: " + numbersArray);
+</script>
+
+</head>
+
+<body></body>
+
+</html>
