@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Cookies </title>
+		<script>
+			function WriteCookie(){
+				var now = new Date();
+				now.setMonth(now.getMonth()+4);
+				
+				if(document.myform.fName.value == ""){
+					alert("Enter first name value!");
+					return;
+				}
+				if(document.myform.mName.value == ""){
+					alert("Enter middle name value!");
+					return;
+				}
+				if(document.myform.lName.value == ""){
+					alert("Enter last name value!");
+					return;
+				}
+				cookievalue1 = escape(document.myform.fName.value) + ";"
+				document.cookie = "name1=" + cookievalue1;
+				cookievalue2 = escape(document.myform.mName.value) + ";"
+				document.cookie = "name2=" + cookievalue2;
+				cookievalue3 = escape(document.myform.lName.value) + ";"
+				document.cookie = "name3=" + cookievalue3;
+				document.cookie = "expires=" + now.toUTCString() + ";"
+				document.write("Setting Cookies: " + "name1=" + cookievalue1 + "\n");
+				document.write("name2=" + cookievalue2 + "\n");
+				document.write("name3=" + cookievalue3 + "\n");
+				document.write("Expires=" + now + "\n");
+				
+			}
+		</script>
+	</head>
+	<body>
+		<form name="myform" action="">
+			Enter first name: <input type="text" name="fName"><br>
+			Enter middle name: <input type="text" name="mName"><br>
+			Enter last name: <input type="text" name="lName"><br>
+			<input type="button" value="Set Cookie" onclick="WriteCookie();">
+		</form>
+			
+	</body>
+<html>
+	
